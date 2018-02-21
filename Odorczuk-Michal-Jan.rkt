@@ -1,5 +1,6 @@
 #lang racket
 
+;;Cube root approximation function
 (define (cube-root val)
   (define margin 0.00001)
   (define (cube a) (* a a a))
@@ -10,6 +11,7 @@
     (if (good-enough? app) app (loop (approx app))))
    (loop 1.))
 
+;;testing
 (cube-root 0) ;;0.017341529915832616 when it should be 0.
 (cube-root 1) ;;1.0 and it is perfect
 (cube-root 8) ;;2.000000000012062 when it should be 2.
